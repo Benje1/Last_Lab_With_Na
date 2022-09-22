@@ -28,6 +28,7 @@ public class BookingController {
     public ResponseEntity<List<Booking>> getBookingByDate(@RequestParam(name = "year")int year, @RequestParam(name = "month")int month, @RequestParam(name = "day")int day){
         return new ResponseEntity<>(bookingRepository.findByDate(LocalDate.of(year, month, day)), HttpStatus.OK);
     }
+    //localhost:8080/bookings/date?year=2020&month=10&day=10
 
 
 }

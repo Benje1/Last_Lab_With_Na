@@ -26,11 +26,13 @@ public class CourseController {
     public ResponseEntity<List<Course>> getCourseByRating(@RequestParam(name = "rating") int rating){
         return new ResponseEntity<>(courseRepository.findByRating(rating), HttpStatus.OK);
     }
+    //localhost:8080/courses/rating?rating=3
 
     @GetMapping(value = "/courses/customer")
     public ResponseEntity<List<Course>> getCoursesByCustomer(@RequestParam(name = "customer") String customer){
         return new ResponseEntity<>(courseRepository.findByBookingsCustomerNameIgnoreCase(customer), HttpStatus.OK);
     }
+    //localhost:8080/courses/customer?customer=bob
 
 
 }

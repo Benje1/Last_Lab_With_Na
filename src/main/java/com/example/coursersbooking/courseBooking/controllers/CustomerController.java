@@ -29,16 +29,19 @@ public class CustomerController {
     public ResponseEntity<List<Customer>> getCustomersByCourse(@RequestParam(name = "course") String  course){
         return new ResponseEntity<>(customerRepository.findByBookingsCourseNameIgnoreCase(course), HttpStatus.OK);
     }
+    //localhost:8080/customers/course?course=Intro%20to%20this%20thing
 
     @GetMapping(value = "/customers/coursetown")
     public ResponseEntity<List<Customer>> getCustomerByCourseTown(@RequestParam(name = "coursename") String coursename, @RequestParam(name = "town") String town){
         return new ResponseEntity<>(customerRepository.findByBookingsCourseNameIgnoreCaseAndBookingsCourseTownIgnoreCase(coursename, town), HttpStatus.OK);
     }
+    //localhost:8080/customers/coursetown?coursename=Intro%20to%20this%20thing&town=there
 
     @GetMapping(value = "/customers/complicated")
     public ResponseEntity<List<Customer>> getCustomerByShitTonOfInfo(@RequestParam(name = "age") int age, @RequestParam(name = "coursename") String coursename, @RequestParam(name = "town")String town){
         return new ResponseEntity<>(customerRepository.findByAgeGreaterThanAndBookingsCourseNameIgnoreCaseAndBookingsCourseTownIgnoreCase(age, coursename, town), HttpStatus.OK);
     }
+    //localhost:8080/customers/complicated?age=30&coursename=Intro%20to%20this%20thing&town=there
 
 
 

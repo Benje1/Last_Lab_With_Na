@@ -43,15 +43,15 @@ public class DataLoader implements ApplicationRunner {
         Course course3 = new Course("Advanced this brand new thing", "Edinburgh", 4);
         courseRepository.save(course3);
 
-        Booking booking = new Booking(course, customer1, LocalDate.of(2020, 10, 10));
+        Booking booking = new Booking(course, customer1, LocalDate.of(2021, 8, 1));
         bookingRepository.save(booking);
-        Booking booking2 = new Booking(course2, customer1,  LocalDate.of(2020, 10, 10));
+        Booking booking2 = new Booking(course2, customer1,  LocalDate.of(2020, 10, 28));
         bookingRepository.save(booking2);
-        Booking booking3 = new Booking(course3, customer2, LocalDate.of(2020, 10, 10));
+        Booking booking3 = new Booking(course3, customer2, LocalDate.of(2022, 7, 14));
         bookingRepository.save(booking3);
-        Booking booking4 = new Booking(course, customer2, LocalDate.of(2020, 10, 10));
+        Booking booking4 = new Booking(course, customer2, LocalDate.of(2020, 12, 10));
         bookingRepository.save(booking4);
-        Booking booking5 = new Booking(course3, customer3, LocalDate.of(2020, 10, 10));
+        Booking booking5 = new Booking(course3, customer3, LocalDate.of(2024, 2, 12));
         bookingRepository.save(booking5);
 
     }
